@@ -133,13 +133,14 @@ section{
 .header .search-form{
     position: absolute;
     top:115%; right:5%;
-    background: #fff;
+    background: #333333;
     width: 50rem; 
     height: 5rem;
     display: flex;
     align-items: center;
     transform: scaleY(0);
     transform-origin: top;
+    border-radius: 15px;
 }
 
 .header .search-form.active{
@@ -150,16 +151,18 @@ section{
     height: 100%; 
     width: 100%;
     font-size: 1.6rem;
-    color: var(--black);
+    background: #333333;
+    color: #fff;
     padding:1rem;
     text-transform: none;
+    border-radius: 15px;
 }
 
 .header .search-form label{
     cursor: pointer;
     font-size: 2.2rem;
     margin-right: 1.5rem;
-    color:var(--black);
+    color: #fff;
 }
 
 .header .search-form label:hover{
@@ -171,7 +174,7 @@ section{
     top: 100%; right: -100%;
     height: calc(100vh - 9.5rem); 
     width: 30rem;
-    background: #fff;
+    background: #1d1d1d;
     padding:0 1.5rem;
 }
 
@@ -192,7 +195,7 @@ section{
     top: 2rem; right: 0rem;
     font-size: 2rem;
     cursor: pointer;
-    color: var(--black);
+    color: #fff;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
@@ -206,7 +209,7 @@ section{
 .header .cart-items-container .cart-item .content h3{
     font-size: 2rem;
     width: 90%;
-    color: var(--black);
+    color: #fff;
     padding-bottom: .5rem;
 }
 
@@ -268,9 +271,71 @@ section{
     flex:1 1 45rem;
 }
 
-.about .row .image img{
+.about .row .image .slider{
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.about .row .image .slider .slides{
+    display: flex;
+    width: 500%;
+}
+
+.about .row .image .slider .slides input{
+    display: none;
+}
+
+.about .row .image .slider .slides .slide{
+    width: 20%;
+    transition: 1s;
+}
+
+.about .row .image .slider .slides .slide img{
     width: 100%;
 }
+
+.about .row .image .slider .navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -25px;
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+.about .row .image .slider .navigation-manual .manual-btn{
+    border: 2px solid var(--main-color);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.about .row .image .slider .navigation-manual .manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.about .row .image .slider .navigation-manual .manual-btn:hover{
+    background: var(--main-color);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+
 
 .about .row .content{
     flex:1 1 45rem;
@@ -279,7 +344,7 @@ section{
 
 .about .row .content h3{
     font-size: 3rem;
-    color: #fff;
+    color:var(--main-color);
     text-transform: none;
 }
 
@@ -306,10 +371,12 @@ section{
     padding: 5rem;
     text-align: center;
     border: var(--border);
+    border-radius: 20px;
 }
 
 .menu .box-container .box img{
-    height: 10rem;
+    height: 15rem;
+    border-radius: 20px;
 }
 
 .menu .box-container .box h3{
@@ -355,6 +422,7 @@ section{
     text-align: center;
     border: var(--border);
     padding: 2rem;
+    border-radius: 20px;
 }
 
 .products .box-container .box .icons a{
@@ -378,6 +446,7 @@ section{
 
 .products .box-container .box .image img{
     height: 25rem;
+    border-radius: 20px;
 }
 
 .products .box-container .box:hover .image img{
@@ -572,7 +641,7 @@ section{
     color: var(--main-color);
     display: block;
     padding-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: none;
 }
 
@@ -681,7 +750,7 @@ section{
     .header .navbar{
         position: absolute;
         top: 100%; right: -100%;
-        background: #fff;
+        background: var(--bg);
         width: 30rem;
         height: calc(100vh - 9.5rem);
     }
@@ -691,12 +760,13 @@ section{
     }
 
     .header .navbar a{
-        color: var(--black);
+        color: #fff;
         display: block;
         margin: 2rem;
         padding: .5rem;
         font-size: 2rem;
         text-align: center;
+        text-transform: none;
     }
 
     .header .search-form{
@@ -735,7 +805,7 @@ section{
     }
 
     .header{
-        padding:1rem 2rem;
+        padding:0.5rem 1.5rem;
     }
 
     #menu-btn{
@@ -749,26 +819,20 @@ section{
     .header .navbar{
         position: absolute;
         top: 100%; right: -100%;
-        background: #fff;
+        background:var(--bg);
         width: 20rem;
-        height: calc(100vh - 9.5rem);
+        height: calc(100vh);
     }
 
     .header .navbar.active{
         right: 0;
     }
 
-    .header .navbar a{
-        color: var(--black);
-        display: block;
-        margin: 1.5rem;
-        padding: .5rem;
-        font-size: 2rem;
-    }
+ 
 
     .header .search-form{
         width: 90%;
-        right: 2.5rem;
+        right: 1.7rem;
     }
 
     .home{
