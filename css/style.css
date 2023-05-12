@@ -125,6 +125,19 @@ section{
     transform: scale(1.2);
 }
 
+.header .icons a{
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons a:hover{
+    color: var(--main-color);
+    transform: scale(1.2);
+}
+
+
 
 #menu-btn{
     display: none;
@@ -260,6 +273,7 @@ section{
 
 
 
+
 .about .row{
     display: flex;
     align-items: center;
@@ -269,6 +283,10 @@ section{
 
 .about .row .image{
     flex:1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
 }
 
 .about .row .image .slider{
@@ -729,7 +747,7 @@ section{
 
 
 
-@media (max-width:1160px){
+@media (max-width:1200px){
 
     html{
         font-size: 70%;
